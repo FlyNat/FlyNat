@@ -1,65 +1,275 @@
 <div align="center">
-  <h1>🛸 FlyNat Ecosystem</h1>
-  <p><strong>Advanced End-to-End Drone Flight Management & Fleet Oversight</strong></p>
-  
-  <a href="https://flynat.net">
-    <img src="https://img.shields.io/badge/Visit-Flynat.net-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website" />
-  </a>
+
+# 🛸 FlyNat — Pilot's Flight Nation
+
+### End-to-end ecosystem for drone flight management, real-time airspace awareness, and regulatory compliance
+
+[![Website](https://img.shields.io/badge/🌐_Website-flynat.net-2563eb?style=for-the-badge&logoColor=white)](https://flynat.net)
+[![Android](https://img.shields.io/badge/Android-APK_v1.0.54-3ddc84?style=for-the-badge&logo=android&logoColor=white)](https://flynat.net/downloads/FlyNat-Mobile.apk)
+[![Windows](https://img.shields.io/badge/Windows-EXE_v1.0.23-0078d4?style=for-the-badge&logo=windows&logoColor=white)](https://flynat.net/downloads/FlyNat-Desktop.exe)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)]()
+
+<br/>
+
+FlyNat is a **3-tier aviation ecosystem** built for drone pilots, operators, and fleet managers.  
+It combines a real-time UTM mobile app with professional telemetry analysis on desktop —  
+giving pilots the tools they need in the field, and the data they need in the office.
+
 </div>
 
-<hr />
+---
 
-<h2>🌟 Core Ecosystem Components</h2>
+## 📱 Tier 1 — FlyNat Mobile App
 
-<p>The FlyNat system is built on two synchronized tiers designed to maximize operational efficiency and data integrity for professional drone pilots and organizations.</p>
+> Real-time UTM situational awareness, digital logbook, live pilot coordination, and weather — all in one field app.
 
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h3>📱 Mobile App & Pilot Logbook</h3>
-      <p>The essential tool for field operations and safety compliance.</p>
-      <ul>
-        <li><strong>Digital Logbook:</strong> Automated recording of flight hours and equipment usage.</li>
-        <li><strong>Smart Checklists:</strong> Integrated pre/post-flight protocols to ensure safety.</li>
-        <li><strong>Real-time Telemetry:</strong> Live data transmission from the aircraft to the cloud.</li>
-        <li><strong>Performance Analytics:</strong> In-app insights into pilot activity and drone health.</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h3>💻 Desktop Management Platform</h3>
-      <p>A comprehensive command center for fleet oversight and business intelligence.</p>
-      <ul>
-        <li><strong>Fleet Management:</strong> Centralized tracking of maintenance, motor hours, and assets.</li>
-        <li><strong>Data Synthesis:</strong> Convert flight logs into actionable technical reports.</li>
-        <li><strong>Professional Reporting:</strong> One-click export of PDF/CSV reports for audits.</li>
-        <li><strong>Secure Infrastructure:</strong> Enterprise-grade protection for sensitive flight data.</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<br/>
 
-<br />
+### 🗺️ Live Airspace Map & NOTAMs
 
-<h2>🛠 Key Capabilities</h2>
-
-<table>
-  <tr>
-    <td><b>✅ Automated Compliance</b></td>
-    <td>System-level verification of flight parameters against operational requirements.</td>
-  </tr>
-  <tr>
-    <td><b>📊 Structural Data Integrity</b></td>
-    <td>Focused on high-fidelity technical data for engineering and industrial inspections.</td>
-  </tr>
-  <tr>
-    <td><b>👤 User-Centric Design</b></td>
-    <td>Optimized interfaces for rapid field entry and deep-dive office analysis.</td>
-  </tr>
-</table>
-
-<hr />
+FlyNat renders official airspace layers directly on the map in real time — updated from national AIP data. Every active NOTAM is pinned to its exact location. Tap any zone or marker to see full details: type, radius, altitude ceiling, valid time, and issuing authority.
 
 <div align="center">
-  <p>Elevating the standards of professional drone operations.</p>
-  <h3><a href="https://flynat.net">Explore FlyNat.net</a></h3>
+<table>
+<tr>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/MobileNotamOnMap.jpeg" width="220" alt="NOTAMs on Live Map"/><br/>
+  <sub><b>NOTAMs pinned on the live map</b></sub>
+</td>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/MobileNotamMsgs.jpeg" width="220" alt="NOTAM Messages Feed"/><br/>
+  <sub><b>NOTAM message feed for active pilot</b></sub>
+</td>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/MobilenotamGNSSmsgs.jpeg" width="220" alt="GNSS Interference Alerts"/><br/>
+  <sub><b>Real-time GNSS interference alerts</b></sub>
+</td>
+</tr>
+</table>
+</div>
+
+**Airspace layers displayed:**
+
+| Layer | Source | Description |
+|---|---|---|
+| 🔵 CTR Zones | eAIP Israel | Control zones around airports — tap for active frequencies |
+| 🔴 Restricted (LLR/LLP/LLU) | eAIP Israel | No-fly and limited zones with full boundary data |
+| 🟢 Nature Reserves (RATAG) | eAIP Israel | Protected natural areas — special permit required |
+| 🟡 Active NOTAMs | Live feed | Temporary restrictions, events, military exercises |
+| 🟠 GNSS Interference | Live feed | Active GPS jamming/spoofing zones broadcast in real time |
+
+<br/>
+
+---
+
+### 🛩️ Live Pilot Sharing & Pre-Flight Coordination
+
+Any pilot who enables sharing appears on the map of nearby pilots in real time. Tap their marker to open a full pilot card: name, rank, drone model, current AGL altitude, mission type, and a direct WhatsApp link for immediate coordination.
+
+Before a flight, pilots can perform a **Pre-Flight Check** with another pilot in the area — view their planned altitude, mission type, and send a direct message to coordinate separation.
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/LivePilotOnmap.jpeg" width="220" alt="Live Pilot on Map"/><br/>
+  <sub><b>Nearby pilots visible on the map in real time</b></sub>
+</td>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/MobileInfoPilotOnmap.jpeg" width="220" alt="Pilot Profile Card"/><br/>
+  <sub><b>Tap a pilot marker to view their full profile</b></sub>
+</td>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/MobilePreflightcheckbetweenPilots.jpeg" width="220" alt="Pre-Flight Coordination"/><br/>
+  <sub><b>Pre-flight coordination between two pilots</b></sub>
+</td>
+</tr>
+</table>
+</div>
+
+- Each pilot shares: **drone model · altitude AGL · mission type · GPS position**
+- Built-in **pilot-to-pilot chat** with push notifications (FCM)
+- Sharing is always **opt-in** — pilots choose when to appear on the map
+- All shared data is **ephemeral** — disappears when the pilot stops sharing
+
+<br/>
+
+---
+
+### 🌤️ Weather Forecast — 24 Hours
+
+Tap anywhere on the map to get a precise 24-hour hourly weather forecast for that exact GPS coordinate, powered by the Open-Meteo API. No need to switch apps — wind speed, gusts, cloud cover, precipitation probability, and visibility are shown inline.
+
+<div align="center">
+  <img src="https://flynat.net/assets/MobileWeather24hrs.jpeg" width="280" alt="24-Hour Weather Forecast"/>
+  <br/><sub><b>24-hour hourly forecast — tap any point on the map</b></sub>
+</div>
+
+<br/>
+
+**Weather data includes:**
+- 🌬️ Wind speed & gust (m/s) — critical for flight safety decisions
+- ☁️ Cloud cover (%) and cloud base altitude
+- 🌧️ Precipitation probability per hour
+- 👁️ Visibility distance
+- 🌡️ Temperature and humidity
+
+<br/>
+
+---
+
+### 📖 Digital Logbook & Flight Records
+
+Every flight recorded via FlyNat Mobile is automatically saved to the pilot's digital logbook. Each entry includes the full GPS track rendered on an interactive map, alongside all technical data from the session.
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="50%">
+  <img src="https://flynat.net/assets/MobileLogBook.jpeg" width="260" alt="Mobile Logbook List"/><br/>
+  <sub><b>Full logbook — filterable by date, drone, or mission type</b></sub>
+</td>
+<td align="center" width="50%">
+  <img src="https://flynat.net/assets/MobileFlightInfo.jpeg" width="260" alt="Flight Info and Track"/><br/>
+  <sub><b>Flight details with GPS track rendered on map</b></sub>
+</td>
+</tr>
+</table>
+</div>
+
+**Each logbook entry records:**
+
+| Field | Details |
+|---|---|
+| 📅 Date & Time | Start and end timestamp |
+| ⏱️ Duration | Total airtime in HH:MM:SS |
+| 📍 GPS Track | Full route rendered on interactive map |
+| 📐 Max Altitude | Peak AGL altitude reached |
+| 🚀 Max Speed | Maximum ground speed recorded |
+| 🛸 Drone Model | Platform used for the flight |
+| 🎯 Mission Type | Survey / Inspection / Photography / Training / Other |
+| 📝 Free Note | Custom pilot annotation (e.g. "Roof scan, client X, engineer approval") |
+
+<br/>
+
+---
+
+### 📡 Live Session History
+
+Every flight performed with location sharing active is automatically saved to the pilot's session history. The record is structured for instant display to a field inspector — no paperwork, no delay.
+
+<div align="center">
+  <img src="https://flynat.net/assets/MobileSessionHistory.jpeg" width="280" alt="Live Session History"/>
+  <br/><sub><b>Session history — complete record of every shared flight</b></sub>
+</div>
+
+<br/>
+
+Each session record includes: **start/end time · duration · max altitude · max speed · GPS coordinates · drone model · mission type · pilot note**
+
+<br/>
+
+---
+
+### 📊 Statistics, Ranks & Achievements
+
+FlyNat tracks every pilot's cumulative flight activity and awards ranks, badges, and achievements automatically from the logbook — no manual input required.
+
+<div align="center">
+  <img src="https://flynat.net/assets/MobilePilotStats.jpeg" width="280" alt="Pilot Statistics"/>
+  <br/><sub><b>Pilot statistics — ranks, badges, and annual flight summary</b></sub>
+</div>
+
+<br/>
+
+---
+
+## 🖥️ Tier 2 — FlyNat Desktop Analytics
+
+> Professional telemetry analysis, deep diagnostics, and fleet logbook management for operators and companies.
+
+FlyNat Desktop ingests raw telemetry files from multiple drone platforms and transforms them into structured, readable aviation data. Built for serious operators, flight schools, and fleet managers who need more than basic CSV exports.
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/FlynatDesktop.png" width="280" alt="FlyNat Desktop Main View"/><br/>
+  <sub><b>Main logbook view — full fleet history</b></sub>
+</td>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/FlyNatStatsDesktop.png" width="280" alt="Statistics and Graphs"/><br/>
+  <sub><b>Visual statistics — flight hours, trends, and metrics</b></sub>
+</td>
+<td align="center" width="33%">
+  <img src="https://flynat.net/assets/FlyNatAdvancedStatsDesktop.png" width="280" alt="Advanced Analytics"/><br/>
+  <sub><b>Advanced analytics — detailed breakdown by drone and pilot</b></sub>
+</td>
+</tr>
+</table>
+</div>
+
+<br/>
+
+### Supported Telemetry Formats
+
+| Format | Source | Details |
+|---|---|---|
+| `.txt` (DJI) | DJI Go / DJI Fly | Full telemetry — battery, GPS, altitude, IMU, RC signal |
+| `.bbl` / `.bfl` | FPV Blackbox | Raw Betaflight/Cleanflight logs decoded frame-by-frame |
+| `.kml` / `.gpx` | Any GPS logger | Track import with timestamps and altitude |
+| `.csv` | DJI / Generic / Drone Harmony | Structured data import with auto column mapping |
+| `.json` (Elios) | Flyability Elios | Inspection drone logs parsed and visualized |
+
+<br/>
+
+### Analysis & Diagnostics
+
+- **Battery curves** — voltage sag, cell delta, discharge rate across the full flight
+- **GPS signal quality** — satellite count, HDOP, fix type per second
+- **RC signal graph** — RSSI/link quality over time with dropout markers
+- **Compass & IMU** — heading error spikes, vibration levels, error flags
+- **Motor telemetry** — RPM, ESC temperature, motor imbalance detection
+- **Anomaly detection** — automatic flagging of error events and out-of-range values
+
+<br/>
+
+### Regulatory Export
+
+Generate official **PDF logbooks** and **CSV exports** containing full flight records — ready for:
+- ✅ Civil aviation authority audits
+- ✅ Insurance documentation
+- ✅ Maintenance review records
+- ✅ Fleet management reporting
+
+<br/>
+
+---
+
+## ⬇️ Download
+
+<div align="center">
+
+| Platform | Download | Version |
+|---|---|---|
+| 📱 **Android (APK)** | [FlyNat-Mobile.apk](https://flynat.net/downloads/FlyNat-Mobile.apk) | v1.0.54 |
+| 🖥️ **Windows (EXE)** | [FlyNat-Desktop.exe](https://flynat.net/downloads/FlyNat-Desktop.exe) | v1.0.23 |
+
+</div>
+
+<br/>
+
+---
+
+## 🔗 Links
+
+| | |
+|---|---|
+| 🌐 Official Website | [flynat.net](https://flynat.net) |
+| 📄 Full Interactive Brochure | [flynat.net/FlyNat-Brochure.html](https://flynat.net/FlyNat-Brochure.html) |
+
+---
+
+<div align="center">
+  <sub>Built for drone pilots · © 2026 FlyNat Solutions · <a href="https://flynat.net">flynat.net</a></sub>
 </div>
