@@ -70,6 +70,37 @@ FlyNat renders official airspace layers directly on the map in real time — upd
 
 <br/>
 
+### 🏛️ Official UTM Layers — Sourced from CAAI (RATA)
+
+All airspace data is sourced directly from the **Israeli Civil Aviation Authority (RATA)** via the official eAIP publication. Layers are rendered with exact boundaries, altitudes, and operational details — identical to what official aeronautical charts show.
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="25%">
+  <img src="https://flynat.net/assets/RataOfficialLayersUTM.jpeg" width="180" alt="Official UTM Layers"/><br/>
+  <sub><b>All official layers on the map</b></sub>
+</td>
+<td align="center" width="25%">
+  <img src="https://flynat.net/assets/RataCTRinfo.jpeg" width="180" alt="CTR Zone Info"/><br/>
+  <sub><b>CTR — Control zone details</b></sub>
+</td>
+<td align="center" width="25%">
+  <img src="https://flynat.net/assets/RataRestrictedInfo.jpeg" width="180" alt="Restricted Zone Info"/><br/>
+  <sub><b>LLR/LLP/LLU — Restricted zones</b></sub>
+</td>
+<td align="center" width="25%">
+  <img src="https://flynat.net/assets/RataNatureInfo.jpeg" width="180" alt="Nature Reserve Info"/><br/>
+  <sub><b>RATAG — Nature reserves</b></sub>
+</td>
+</tr>
+</table>
+</div>
+
+Tapping any zone opens a full detail panel: **zone name · type · altitude floor & ceiling · operating hours · responsible authority · permit requirements**.
+
+<br/>
+
 ---
 
 ### 🛩️ Live Pilot Sharing & Pre-Flight Coordination
@@ -98,9 +129,23 @@ Before a flight, pilots can perform a **Pre-Flight Check** with another pilot in
 </div>
 
 - Each pilot shares: **drone model · altitude AGL · mission type · GPS position**
-- Built-in **pilot-to-pilot chat** with push notifications (FCM)
 - Sharing is always **opt-in** — pilots choose when to appear on the map
 - All shared data is **ephemeral** — disappears when the pilot stops sharing
+
+<br/>
+
+### 💬 Pilot-to-Pilot Chat
+
+FlyNat includes a built-in encrypted messaging system between pilots — no WhatsApp, no phone number required. Start a conversation directly from the map by tapping another pilot's marker.
+
+**How it works:**
+- Tap any pilot on the live map → open their profile card → start a chat
+- Messages are delivered instantly via **Firebase Realtime Database**
+- **Push notifications** (FCM) alert pilots to new messages even when the app is in the background
+- Each conversation shows the other pilot's **name, rank, drone model, and profile photo**
+- Conversations can be cleared at any time — soft delete keeps history private without data loss
+
+> Designed for quick pre-flight coordination, airspace deconfliction, and on-the-spot communication between pilots operating in the same area.
 
 <br/>
 
