@@ -5,15 +5,25 @@
 ### End-to-end ecosystem for drone flight management, real-time airspace awareness, and regulatory compliance
 
 [![Website](https://img.shields.io/badge/🌐_Website-flynat.net-2563eb?style=for-the-badge&logoColor=white)](https://flynat.net)
-[![Android](https://img.shields.io/badge/Android-APK_v1.0.54-3ddc84?style=for-the-badge&logo=android&logoColor=white)](https://flynat.net/downloads/FlyNat-Mobile.apk)
-[![Windows](https://img.shields.io/badge/Windows-EXE_v1.0.23-0078d4?style=for-the-badge&logo=windows&logoColor=white)](https://flynat.net/downloads/FlyNat-Desktop.exe)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)]()
 
 <br/>
 
-FlyNat is a **3-tier aviation ecosystem** built for drone pilots, operators, and fleet managers.  
+FlyNat is a **2-platform aviation ecosystem** built for drone pilots, operators, and fleet managers.  
 It combines a real-time UTM mobile app with professional telemetry analysis on desktop —  
 giving pilots the tools they need in the field, and the data they need in the office.
+
+### How the platforms connect
+
+The two apps work together as a complete flight lifecycle system:
+
+1. **Fly** — record your flight with any DJI, FPV, or Elios drone
+2. **Import** — load the raw telemetry log into **FlyNat Desktop** (drag & drop)
+3. **Sync** — the processed flight automatically appears in your **FlyNat Mobile** logbook
+4. **Review** — view your GPS track, stats, and full technical breakdown on your phone — anywhere
+
+> The Desktop app is the processing engine. Mobile is the field companion.  
+> Logs must be imported into Desktop first before they appear in the mobile logbook.
 
 </div>
 
@@ -242,20 +252,9 @@ Generate official **PDF logbooks** and **CSV exports** containing full flight re
 - ✅ Maintenance review records
 - ✅ Fleet management reporting
 
-<br/>
+### Sync with FlyNat Mobile
 
----
-
-## ⬇️ Download
-
-<div align="center">
-
-| Platform | Download | Version |
-|---|---|---|
-| 📱 **Android (APK)** | [FlyNat-Mobile.apk](https://flynat.net/downloads/FlyNat-Mobile.apk) | v1.0.54 |
-| 🖥️ **Windows (EXE)** | [FlyNat-Desktop.exe](https://flynat.net/downloads/FlyNat-Desktop.exe) | v1.0.23 |
-
-</div>
+Once a flight log is imported and processed in Desktop, it is automatically pushed to the pilot's **FlyNat Mobile** logbook. The pilot can then view the full flight — GPS track, altitude profile, stats, and notes — directly from their phone, without carrying a laptop to the field.
 
 <br/>
 
@@ -266,7 +265,6 @@ Generate official **PDF logbooks** and **CSV exports** containing full flight re
 | | |
 |---|---|
 | 🌐 Official Website | [flynat.net](https://flynat.net) |
-| 📄 Full Interactive Brochure | [flynat.net/FlyNat-Brochure.html](https://flynat.net/FlyNat-Brochure.html) |
 
 ---
 
