@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/favicon.svg" width="80" alt="FlyNat Logo"/>
+<img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logo.svg" width="260" alt="FlyNat"/>
 
-# FlyNat — Pilot's Flight Nation
+# Pilot's Flight Nation
 
 ### Digital logbook, flight diagnostics, and live pilot coordination for drone pilots
 
