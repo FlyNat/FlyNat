@@ -94,6 +94,27 @@ Import DJI flight logs directly on Android — no desktop required. The logbook 
 
 <br/>
 
+### 📂 Log Manager — Import Logs on Android
+
+FlyNat opens a **dedicated folder on your Android device** where you simply drop your DJI log files — no cables, no PC required.
+
+**How it works:**
+1. Open FlyNat and tap **Log Manager**
+2. FlyNat shows you the exact folder path on your device (e.g. `Internal Storage/FlyNat/Logs/`)
+3. Copy your DJI `.txt` log files into that folder — via USB, a file manager app, or directly from the drone's SD card
+4. Tap **Import** — FlyNat scans the folder, parses all logs, and adds them to your logbook automatically
+5. **Backup** your parsed logbook as a `.json` file at any time
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logmanagerfolders.jpeg" width="30%" alt="Log Manager Folders"/>
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logmanagerimport.jpeg" width="30%" alt="Log Manager Import"/>
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logmanagerbackup.jpeg" width="30%" alt="Log Manager Backup"/>
+</p>
+
+<br/>
+
 ### 📊 Statistics, Ranks & Achievements
 
 FlyNat tracks cumulative flight activity and awards ranks and badges automatically from the logbook.
