@@ -45,6 +45,16 @@
 
 <br/>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/livemapflynat.jpeg" width="30%" alt="Live Map"/>
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logbookmobile.jpeg" width="30%" alt="Mobile Logbook"/>
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logbookmobile2.jpeg" width="30%" alt="Mobile Logbook 2"/>
+</p>
+
+<br/>
+
 ### 🗺️ Live Map & Pilot Sharing
 
 Any pilot who enables sharing appears on the map in real time. Tap their marker to open a full pilot card: name, drone model, current AGL altitude, mission type, and a direct contact link.
@@ -97,6 +107,16 @@ FlyNat tracks cumulative flight activity and awards ranks and badges automatical
 > Professional telemetry analysis, deep diagnostics, and fleet logbook management for Windows.
 
 FlyNat Desktop ingests raw telemetry files from multiple drone platforms and transforms them into structured aviation data.
+
+<br/>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logbookdesktop.png" width="32%" alt="Desktop Logbook"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logbookdesktop2.png" width="32%" alt="Desktop Analytics"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/FlyNat/FlyNat/main/images/logbookdesktop3.png" width="32%" alt="Desktop Diagnostics"/>
+</p>
 
 <br/>
 
