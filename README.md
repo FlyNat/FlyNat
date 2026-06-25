@@ -4,7 +4,7 @@
 
 ### Digital logbook, flight diagnostics, and live pilot coordination for drone pilots
 
-[![GitHub Release](https://img.shields.io/github/v/release/FlyNat/FlyNat?style=for-the-badge&label=Latest+Release&color=2563eb)](https://github.com/FlyNat/FlyNat/releases/latest)
+[![GitHub Release](https://img.shields.io/badge/Latest%20Release-v1.0.81-2563eb?style=for-the-badge)](https://github.com/FlyNat/FlyNat/releases/latest)
 [![Status](https://img.shields.io/badge/Server-Closed%20·%20Apps%20Live-orange?style=for-the-badge)]()
 
 <br/>
