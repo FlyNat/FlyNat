@@ -1,0 +1,9 @@
+{
+  "desktop": "1.0.31",
+  "mobile": "1.0.81",
+  "desktop_notes": "Fix: GNSS + RC signal now saved correctly per path point\nMini 5 Pro fix: correct 2S cell count, real cell deviation\nCenterBattery fix: cycle count + temperature for older firmware\nReparse runs in background with progress dialog",
+  "mobile_notes": "Mobile log parsing — import DJI binary logs directly on Android.\nSmarter deduplication — no more falsely blocked logs.\nIndoor flight fix — flights with no GPS no longer crash.\nDJI 2026 format support.\n\nפירסור לוגים במובייל — ייבוא לוגי DJI בינאריים ישירות באנדרואיד.\nכפילויות חכמות — לא עוד חסימת לוגים בטעות.\nתיקון טיסה מקורה — טיסות ללא GPS לא קורסות יותר.\nתמיכה בפורמט DJI 2026.",
+  "mobile_force": true,
+  "desktop_url": "https://github.com/FlyNat/FlyNat/releases/download/v2.0.0/FlyNat-LogBook-Desktop.exe",
+  "mobile_url": "https://github.com/FlyNat/FlyNat/releases/download/v2.0.0/FlyNat-LogBook.apk"
+}
