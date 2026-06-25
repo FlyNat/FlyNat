@@ -6,7 +6,7 @@
 
 ### Digital logbook, flight diagnostics, and live pilot coordination for drone pilots
 
-[![GitHub Release](https://img.shields.io/badge/Latest%20Release-v1.0.81-2563eb?style=for-the-badge)](https://github.com/FlyNat/FlyNat/releases/latest)
+[![GitHub Release](https://img.shields.io/badge/Latest%20Release-v1.0.82-2563eb?style=for-the-badge)](https://github.com/FlyNat/FlyNat/releases/latest)
 [![Status](https://img.shields.io/badge/Server-Closed%20·%20Apps%20Live-orange?style=for-the-badge)]()
 
 <br/>
@@ -93,6 +93,17 @@ Import DJI flight logs directly on Android — no desktop required. The logbook 
 **Supported import formats (Mobile):**
 - DJI binary `.txt` logs (DJI Go / DJI Fly)
 - CSV exports (AirData, Litchi)
+
+<br/>
+
+### 📋 AIP — Israeli Aviation Regulations
+
+Browse the Israeli AIP (פמ"ת 2/25) directly inside the app — no internet required.
+
+- **Keyword search** across all regulations — altitude limits, restricted zones, authorization, communication
+- **Category filters** — definitions, altitude rules, restricted zones, authorization, communication, population distance, drone flight plans
+- All altitudes shown in **feet and meters**
+- Works fully **offline** — data is stored locally
 
 <br/>
 
@@ -189,6 +200,7 @@ Generate official **PDF logbooks** and **CSV exports** ready for:
 | 🌤️ Weather forecast | ✅ Available |
 | 📊 Statistics & logbook | ✅ Available |
 | 📄 PDF export | ✅ Available |
+| 📋 AIP — Israeli aviation regulations (offline) | ✅ Available |
 | 🚫 UAS NOTAM overlay | ❌ Server closed |
 | 🚫 DJI Pilot 2 Cloud API | ❌ Server closed |
 
