@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlyNat — Service Notice</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #050a0f;
+      --surface: #0d1b27;
+      --card:    #0f2030;
+      --accent:  #00b4d8;
+      --accent2: #0096b7;
+      --green:   #2ecc71;
+      --orange:  #f39c12;
+      --red:     #e74c3c;
+      --text:    #e0f2f7;
+      --muted:   #607d8b;
+      --divider: #1e3a4a;
+      --mono:    'Roboto Mono', monospace;
+      --sans:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body.he { font-family: 'Inter', 'Arial Hebrew', Arial, sans-serif; }
+
+    .bg-glow {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 20%, rgba(0,180,216,.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 20% 80%, rgba(231,76,60,.04) 0%, transparent 60%);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+      background: rgba(5,10,15,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 18px; font-weight: 700;
+      color: var(--text); text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-logo svg { width: 32px; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-status {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 10px; font-weight: 600;
+      color: var(--red); letter-spacing: 2px; text-transform: uppercase;
+    }
+    .nav-status::before { content: '●'; font-size: 8px; animation: blink 1.8s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+    .lang-btn {
+      font-family: var(--mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 6px; cursor: pointer;
+      background: transparent; border: 1px solid var(--divider);
+      color: var(--muted); transition: all .2s;
+    }
+    .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 100px 5% 80px;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(231,76,60,.1); border: 1px solid rgba(231,76,60,.3);
+      border-radius: 20px; padding: 6px 18px; margin-bottom: 36px;
+      font-family: var(--mono); font-size: 10px; font-weight: 600;
+      color: var(--red); letter-spacing: 2px; text-transform: uppercase;
+    }
+
+    .hero-icon { margin-bottom: 36px; }
+    .hero-icon svg {
+      width: 100px; height: 100px;
+      animation: drone-float 3.2s ease-in-out infinite;
+      filter: drop-shadow(0 0 18px rgba(0,180,216,.4));
+    }
+    @keyframes drone-float {
+      0%,100% { transform: translateY(0px);   filter: drop-shadow(0 0 18px rgba(0,180,216,.4)); }
+      50%      { transform: translateY(-12px); filter: drop-shadow(0 0 36px rgba(0,180,216,.8)); }
+    }
+    .sig-ring { transform-box: fill-box; transform-origin: center; animation: ring-out 2.8s ease-out infinite; }
+    .sig-ring-2 { animation-delay: 1.4s; }
+    @keyframes ring-out { 0%{transform:scale(.9);opacity:.6} 100%{transform:scale(4);opacity:0} }
+
+    /* Rotor CSS spin */
+    .r-cw  { animation: spin-cw  0.32s linear infinite; transform-box: fill-box; transform-origin: center; }
+    .r-ccw { animation: spin-ccw 0.32s linear infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes spin-cw  { to { transform: rotate(360deg);  } }
+    @keyframes spin-ccw { to { transform: rotate(-360deg); } }
+
+    h1 {
+      font-family: var(--mono); font-size: clamp(28px, 5vw, 52px);
+      font-weight: 700; line-height: 1.2; letter-spacing: -1px; margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--accent); }
+    h1 .dim    { color: var(--muted); }
+
+    .hero-sub {
+      font-size: clamp(14px, 1.8vw, 17px); color: var(--muted);
+      max-width: 620px; margin: 0 auto 48px;
+      font-family: var(--mono); line-height: 1.9;
+    }
+
+    /* ── CARDS ── */
+    .cards-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px; max-width: 860px; width: 100%;
+      margin: 0 auto 48px; text-align: left;
+    }
+    .info-card {
+      background: var(--card); border: 1px solid var(--divider);
+      border-radius: 16px; padding: 28px 28px 24px;
+    }
+    .card-label {
+      font-family: var(--mono); font-size: 9px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-label.green { color: var(--green); }
+    .card-label.red   { color: var(--red); }
+    .card-label.green::before { content: '▸'; }
+    .card-label.red::before   { content: '▸'; }
+
+    .item-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .item-list li {
+      font-family: var(--mono); font-size: 12px; color: var(--muted);
+      display: flex; align-items: center; gap: 10px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--divider);
+    }
+    .item-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .item-list li .dot-green { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    .item-list li .dot-red   { width: 6px; height: 6px; border-radius: 50%; background: var(--red);   flex-shrink: 0; }
+    .item-list li span { color: var(--text); }
+
+    /* ── GITHUB BUTTON ── */
+    .github-wrap { max-width: 860px; width: 100%; margin: 0 auto; }
+    .btn-github {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      width: 100%; padding: 18px 32px; border-radius: 12px;
+      background: var(--accent); color: var(--bg);
+      font-family: var(--mono); font-size: 13px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      text-decoration: none; transition: all .2s;
+    }
+    .btn-github:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,180,216,.35); }
+    .btn-github svg { flex-shrink: 0; }
+    .btn-github-sub {
+      font-family: var(--mono); font-size: 10px; color: var(--muted);
+      text-align: center; margin-top: 12px; letter-spacing: 1px;
+    }
+
+    /* ── MESSAGE ── */
+    .message-block {
+      max-width: 680px; margin: 0 auto 48px;
+      background: var(--surface); border: 1px solid var(--divider);
+      border-radius: 16px; padding: 32px 36px; text-align: left;
+    }
+    .message-block .msg-label {
+      font-family: var(--mono); font-size: 9px; font-weight: 700;
+      color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .message-block p { font-size: 15px; color: var(--muted); line-height: 1.85; }
+    .message-block p + p { margin-top: 14px; }
+    .message-block strong { color: var(--text); font-weight: 600; }
+
+    /* ── RTL adjustments ── */
+    html[dir="rtl"] .message-block { text-align: right; }
+    html[dir="rtl"] .cards-row     { text-align: right; }
+    html[dir="rtl"] .item-list li  { flex-direction: row-reverse; }
+    html[dir="rtl"] .card-label    { flex-direction: row-reverse; }
+    html[dir="rtl"] .card-label.green::before,
+    html[dir="rtl"] .card-label.red::before { content: '◂'; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--divider); padding: 32px 5%; position: relative; z-index: 1; }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .footer-copy { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 1px; }
+    .footer-gh { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 1px; text-decoration: none; transition: color .2s; }
+    .footer-gh:hover { color: var(--text); }
+
+    @media (max-width: 640px) {
+      .cards-row { grid-template-columns: 1fr; }
+      .message-block { padding: 24px 20px; }
+      h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="32" y1="32" x2="50" y2="14" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="32" y1="32" x2="14" y2="14" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="32" y1="32" x2="50" y2="50" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="32" y1="32" x2="14" y2="50" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="50" cy="14" r="8" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.1)"/>
+      <circle cx="14" cy="14" r="8" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.1)"/>
+      <circle cx="50" cy="50" r="8" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.1)"/>
+      <circle cx="14" cy="50" r="8" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.1)"/>
+      <circle cx="32" cy="32" r="7" fill="#00b4d8"/>
+      <circle cx="32" cy="32" r="3.5" fill="#050a0f"/>
+    </svg>
+    <span style="color:#00d4ff">Fly</span><span style="color:#ff6b35">Nat</span>
+  </a>
+  <div class="nav-right">
+    <div class="nav-status" data-i18n="nav_status">Server Offline</div>
+    <button class="lang-btn" onclick="toggleLang()" id="lang-toggle">עב</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-badge" data-i18n="badge">Service Notice · 2026</div>
+
+  <div class="hero-icon">
+    <svg id="drone-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle class="sig-ring d-ring"          cx="60" cy="60" r="16" stroke="#00b4d8" stroke-width="1.5" fill="none"/>
+      <circle class="sig-ring sig-ring-2 d-ring" cx="60" cy="60" r="16" stroke="#00b4d8" stroke-width="1"   fill="none"/>
+      <line class="d-arm" x1="60" y1="60" x2="95" y2="25" stroke="#00b4d8" stroke-width="5" stroke-linecap="round"/>
+      <line class="d-arm" x1="60" y1="60" x2="25" y2="25" stroke="#00b4d8" stroke-width="5" stroke-linecap="round"/>
+      <line class="d-arm" x1="60" y1="60" x2="95" y2="95" stroke="#00b4d8" stroke-width="5" stroke-linecap="round"/>
+      <line class="d-arm" x1="60" y1="60" x2="25" y2="95" stroke="#00b4d8" stroke-width="5" stroke-linecap="round"/>
+      <circle class="d-motor" cx="95" cy="25" r="14" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.08)"/>
+      <g class="r-cw">
+        <line class="d-blade" x1="82" y1="25" x2="108" y2="25" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+        <line class="d-blade" x1="95" y1="12" x2="95"  y2="38"  stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+      </g>
+      <circle class="d-motor" cx="25" cy="25" r="14" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.08)"/>
+      <g class="r-ccw">
+        <line class="d-blade" x1="12" y1="25" x2="38" y2="25" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+        <line class="d-blade" x1="25" y1="12" x2="25" y2="38"  stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+      </g>
+      <circle class="d-motor" cx="95" cy="95" r="14" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.08)"/>
+      <g class="r-ccw">
+        <line class="d-blade" x1="82" y1="95" x2="108" y2="95" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+        <line class="d-blade" x1="95" y1="82" x2="95"  y2="108" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+      </g>
+      <circle class="d-motor" cx="25" cy="95" r="14" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.08)"/>
+      <g class="r-cw">
+        <line class="d-blade" x1="12" y1="95" x2="38" y2="95" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+        <line class="d-blade" x1="25" y1="82" x2="25" y2="108"  stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+      </g>
+      <circle id="d-body" cx="60" cy="60" r="12" fill="#00b4d8"/>
+      <circle cx="60" cy="60" r="6"  fill="#050a0f"/>
+    </svg>
+  </div>
+
+  <h1 data-i18n-html="title">
+    <span class="dim">Server</span> <span class="accent">Shutdown</span><br/>
+    <span class="dim">Notice</span>
+  </h1>
+
+  <p class="hero-sub" data-i18n-html="subtitle">
+    Dear friends and fellow pilots —<br/>
+    due to general circumstances, we are closing the FlyNat website and server.<br/>
+    The app continues. It's moving to GitHub.
+  </p>
+
+  <!-- Message block -->
+  <div class="message-block">
+    <div class="msg-label" data-i18n="msg_label">From the FlyNat team</div>
+    <p data-i18n-html="msg_p1">
+      Thank you for flying with us. The FlyNat server and website are shutting down, but
+      <strong>the apps live on</strong> — completely independent of any server, free, and open to the community.
+    </p>
+    <p data-i18n-html="msg_p2">
+      All future releases, updates, and downloads will be available directly on
+      <strong>GitHub</strong>. Head there to grab the latest version or follow development.
+    </p>
+  </div>
+
+  <!-- What's in / what's out -->
+  <div class="cards-row">
+    <div class="info-card">
+      <div class="card-label green" data-i18n="card_in_title">What's included</div>
+      <ul class="item-list">
+        <li><div class="dot-green"></div><span data-i18n="in_1">Mobile log parsing — import DJI logs on Android</span></li>
+        <li><div class="dot-green"></div><span data-i18n="in_2">Full offline logbook — no internet required</span></li>
+        <li><div class="dot-green"></div><span data-i18n="in_3">Live map &amp; pilot-to-pilot chat via Firebase</span></li>
+        <li><div class="dot-green"></div><span data-i18n="in_4">Flight statistics, diagnostics &amp; PDF export</span></li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-label red" data-i18n="card_out_title">No longer available</div>
+      <ul class="item-list">
+        <li><div class="dot-red"></div><span data-i18n="out_1">UAS NOTAM overlay</span></li>
+        <li><div class="dot-red"></div><span data-i18n="out_2">DJI Pilot 2 cloud API integration</span></li>
+        <li><div class="dot-red"></div><span data-i18n="out_3">Server-dependent API features</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GitHub CTA -->
+  <div class="github-wrap">
+    <a href="https://github.com/FlyNat/FlyNat" class="btn-github" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+      </svg>
+      <span data-i18n="gh_btn">Download &amp; Updates on GitHub</span>
+    </a>
+    <p class="btn-github-sub" data-i18n="gh_sub">github.com/FlyNat/FlyNat &nbsp;·&nbsp; Free &nbsp;·&nbsp; Open Source</p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
+        <line x1="32" y1="32" x2="50" y2="14" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="32" y1="32" x2="14" y2="14" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="32" y1="32" x2="50" y2="50" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="32" y1="32" x2="14" y2="50" stroke="#00b4d8" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="50" cy="14" r="7" stroke="#00b4d8" stroke-width="2" fill="#0d2535"/>
+        <circle cx="14" cy="14" r="7" stroke="#00b4d8" stroke-width="2" fill="#0d2535"/>
+        <circle cx="50" cy="50" r="7" stroke="#00b4d8" stroke-width="2" fill="#0d2535"/>
+        <circle cx="14" cy="50" r="7" stroke="#00b4d8" stroke-width="2" fill="#0d2535"/>
+        <circle cx="32" cy="32" r="7" fill="#00b4d8"/>
+      </svg>
+      FlyNat
+    </div>
+    <a href="https://github.com/FlyNat/FlyNat" class="footer-gh" target="_blank" rel="noopener">
+      github.com/FlyNat/FlyNat
+    </a>
+    <div class="footer-copy" data-i18n="footer_copy">© 2026 FlyNat · Blue skies ahead.</div>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+  en: {
+    nav_status:     'Server Offline',
+    badge:          'Service Notice · 2026',
+    title:          '<span class="dim">Server</span> <span class="accent">Shutdown</span><br/><span class="dim">Notice</span>',
+    subtitle:       'Dear friends and fellow pilots —<br/>due to general circumstances, we are closing the FlyNat website and server.<br/>The app continues. It\'s moving to GitHub.',
+    msg_label:      'From the FlyNat team',
+    msg_p1:         'Thank you for flying with us. The FlyNat server and website are shutting down, but <strong>the apps live on</strong> — completely independent of any server, free, and open to the community.',
+    msg_p2:         'All future releases, updates, and downloads will be available directly on <strong>GitHub</strong>. Head there to grab the latest version or follow development.',
+    card_in_title:  "What's included",
+    in_1:           'Mobile log parsing — import DJI logs on Android',
+    in_2:           'Full offline logbook — no internet required',
+    in_3:           'Live map &amp; pilot-to-pilot chat via Firebase',
+    in_4:           'Flight statistics, diagnostics &amp; PDF export',
+    card_out_title: 'No longer available',
+    out_1:          'UAS NOTAM overlay',
+    out_2:          'DJI Pilot 2 cloud API integration',
+    out_3:          'Server-dependent API features',
+    gh_btn:         'Download &amp; Updates on GitHub',
+    gh_sub:         'github.com/FlyNat/FlyNat &nbsp;·&nbsp; Free &nbsp;·&nbsp; Open Source',
+    footer_copy:    '© 2026 FlyNat · Blue skies ahead.',
+  },
+  he: {
+    nav_status:     'שרת לא פעיל',
+    badge:          'הודעת שירות · 2026',
+    title:          '<span class="dim">הודעת</span> <span class="accent">סגירה</span>',
+    subtitle:       'חברים וטייסים יקרים —<br/>עקב סיבות כלליות, אנו נאלצים לסגור את אתר ושרת FlyNat.<br/>האפליקציות ממשיכות. הן עוברות ל-GitHub.',
+    msg_label:      'מצוות FlyNat',
+    msg_p1:         'תודה שטסתם איתנו. שרת ואתר FlyNat נסגרים, אך <strong>האפליקציות ממשיכות לפעול</strong> — עצמאיות לחלוטין מכל שרת, חינמיות ופתוחות לקהילה.',
+    msg_p2:         'כל הגרסאות, העדכונים וההורדות הבאות יהיו זמינים ישירות ב-<strong>GitHub</strong>. היכנסו לשם להורדת הגרסה העדכנית ולמעקב אחרי הפיתוח.',
+    card_in_title:  'מה נשאר',
+    in_1:           'פירסור לוגים במובייל — ייבוא לוגי DJI באנדרואיד',
+    in_2:           'לוגבוק מלא ללא אינטרנט',
+    in_3:           'מפה חיה ושיחה בין טייסים דרך Firebase',
+    in_4:           'סטטיסטיקות טיסה, דיאגנוסטיקה וייצוא PDF',
+    card_out_title: 'מה לא יהיה יותר',
+    out_1:          'שכבת UAS NOTAM',
+    out_2:          'אינטגרציית DJI Pilot 2 Cloud API',
+    out_3:          'פיצ\'רים שהיו תלויים בשרת',
+    gh_btn:         'הורדות ועדכונים ב-GitHub',
+    gh_sub:         'github.com/FlyNat/FlyNat &nbsp;·&nbsp; חינמי &nbsp;·&nbsp; קוד פתוח',
+    footer_copy:    '© 2026 FlyNat · שמיים פתוחים לפניכם.',
+  }
+};
+
+// Drone shutdown animation
+(function() {
+  const CYAN  = [0, 180, 216];
+  const BLADE = [0, 212, 255];
+  const RED   = [231, 76, 60];
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function lerpRgb(a, b, t) {
+    return [Math.round(lerp(a[0],b[0],t)), Math.round(lerp(a[1],b[1],t)), Math.round(lerp(a[2],b[2],t))];
+  }
+  function rgb(c)      { return 'rgb('+c[0]+','+c[1]+','+c[2]+')'; }
+  function rgba(c, a)  { return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')'; }
+
+  setTimeout(function() {
+    var heroSvg  = document.querySelector('.hero-icon svg');
+    var rotors   = document.querySelectorAll('.r-cw, .r-ccw');
+    var sigRings = document.querySelectorAll('.d-ring');
+    var arms     = document.querySelectorAll('.d-arm');
+    var motors   = document.querySelectorAll('.d-motor');
+    var blades   = document.querySelectorAll('.d-blade');
+    var body     = document.getElementById('d-body');
+
+    // Fade out signal rings
+    sigRings.forEach(function(r) {
+      r.style.animation  = 'none';
+      r.style.transition = 'opacity 0.8s';
+      r.style.opacity    = '0';
+    });
+
+    // Slow down rotors
+    var dur = 0.32;
+    var slowTimer = setInterval(function() {
+      dur *= 1.13;
+      rotors.forEach(function(r) { r.style.animationDuration = dur + 's'; });
+      if (dur >= 5.5) {
+        clearInterval(slowTimer);
+        setTimeout(function() {
+          rotors.forEach(function(r) { r.style.animationPlayState = 'paused'; });
+        }, 300);
+      }
+    }, 65);
+
+    // Color shift to red (starts 350ms in)
+    setTimeout(function() {
+      var styleEl = document.createElement('style');
+      styleEl.textContent =
+        '@keyframes drone-float-red{' +
+        '0%,100%{transform:translateY(0px);filter:drop-shadow(0 0 18px rgba(231,76,60,.5))}' +
+        '50%{transform:translateY(-12px);filter:drop-shadow(0 0 36px rgba(231,76,60,.9))}}';
+      document.head.appendChild(styleEl);
+      heroSvg.style.animationName = 'drone-float-red';
+
+      var t = 0;
+      var colorTimer = setInterval(function() {
+        t = Math.min(t + 0.011, 1);
+        var col    = lerpRgb(CYAN, RED, t);
+        var blade  = lerpRgb(BLADE, RED, t);
+        var sc     = rgb(col);
+        var bc     = rgb(blade);
+        var fc     = rgba(col, 0.08);
+
+        arms.forEach(function(el)   { el.setAttribute('stroke', sc); });
+        motors.forEach(function(el) { el.setAttribute('stroke', sc); el.setAttribute('fill', fc); });
+        blades.forEach(function(el) { el.setAttribute('stroke', bc); });
+        body.setAttribute('fill', sc);
+
+        if (t >= 1) clearInterval(colorTimer);
+      }, 38);
+    }, 350);
+
+  }, 2500);
+})();
+
+let currentLang = 'en';
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'he' : 'en';
+  applyLang(currentLang);
+}
+
+function applyLang(lang) {
+  const t = i18n[lang];
+  const html = document.documentElement;
+
+  html.lang = lang;
+  html.dir  = lang === 'he' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('he', lang === 'he');
+
+  document.getElementById('lang-toggle').textContent = lang === 'en' ? 'עב' : 'EN';
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+}
+</script>
+
+</body>
+</html>
