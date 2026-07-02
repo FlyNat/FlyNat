@@ -2,7 +2,7 @@
   "desktop": "1.0.31",
   "mobile": "1.0.82",
   "desktop_notes": "Fix: GNSS + RC signal now saved correctly per path point\nMini 5 Pro fix: correct 2S cell count, real cell deviation\nCenterBattery fix: cycle count + temperature for older firmware\nReparse runs in background with progress dialog",
-  "mobile_notes": "מסך AIP חדש: עיון בתקנות התעופה הישראליות (פמ\"ת 2/25) עם חיפוש וסינון קטגוריות.\nגובהות ברגל ומטר, עצורות, נתיבים, אישורים ועוד — הכל מקומי ללא אינטרנט.\nשיפורי עיצוב בממשק.\n\nNew AIP screen: browse Israeli aviation regulations (AIP 2/25) with search and category filters.\nAltitudes in feet and meters, restricted zones, routes, authorizations — all local, no internet needed.\nUI improvements.",
+  "mobile_notes": "מסך AIP חדש: עיון בתקנות התעופה הישראליות (פמ\"ת 2/25) עם חיפוש וסינון קטגוריות.\nגבהים ברגל ומטר, עצורות, נתיבים, אישורים ועוד — הכל מקומי ללא אינטרנט.\nשיפורי עיצוב בממשק.\n\nNew AIP screen: browse Israeli aviation regulations (AIP 2/25) with search and category filters.\nAltitudes in feet and meters, restricted zones, routes, authorizations — all local, no internet needed.\nUI improvements.",
   "mobile_force": false,
   "desktop_url": "https://github.com/FlyNat/FlyNat/releases/download/v1.0.31/FlyNat-LogBook-Desktop.exe",
   "mobile_url": "https://github.com/FlyNat/FlyNat/releases/download/v1.0.82/FlyNat-LogBook.apk"
