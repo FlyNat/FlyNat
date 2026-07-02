@@ -7,13 +7,14 @@
 ### Digital logbook, flight diagnostics, and live pilot coordination for drone pilots
 
 [![GitHub Release](https://img.shields.io/badge/Latest%20Release-v1.0.82-2563eb?style=for-the-badge)](https://github.com/FlyNat/FlyNat/releases/latest)
+[![YouTube](https://img.shields.io/badge/YouTube-Tutorials-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@FlyNat-FlightNation/videos)
 [![Status](https://img.shields.io/badge/Server-Closed%20·%20Apps%20Live-orange?style=for-the-badge)]()
 
 <br/>
 
-> **ℹ️ Notice:** The FlyNat website and API server have been shut down.  
-> The apps are **fully functional** and continue to be available here on GitHub.  
-> Firebase-based features (live map, pilot chat, real-time sharing) remain active.  
+> **ℹ️ Notice:** The FlyNat website and API server have been shut down.
+> The apps are **fully functional** and continue to be available here on GitHub.
+> Firebase-based features (live map, pilot chat, real-time sharing) remain active.
 > Features that required the API server (UAS NOTAM, DJI Pilot 2 Cloud) are no longer available.
 
 <br/>
@@ -203,6 +204,17 @@ Generate official **PDF logbooks** and **CSV exports** ready for:
 | 📋 AIP — Israeli aviation regulations (offline) | ✅ Available |
 | 🚫 UAS NOTAM overlay | ❌ Server closed |
 | 🚫 DJI Pilot 2 Cloud API | ❌ Server closed |
+
+<br/>
+
+---
+
+## ☕ Support the Project
+
+FlyNat is built by one developer, for free, for the drone community.
+If you find it useful — a coffee goes a long way.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/flynat)
 
 <br/>
 
